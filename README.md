@@ -1,6 +1,7 @@
 # Spring Cloud Contract simple CDC sample
 [![Build Status](https://travis-ci.org/ingogriebsch/sample-spring-cloud-contract-simple-cdc.svg?branch=master)](https://travis-ci.org/ingogriebsch/sample-spring-cloud-contract-simple-cdc)
 [![Coverage Status](https://coveralls.io/repos/github/ingogriebsch/sample-spring-cloud-contract-simple-cdc/badge.svg?branch=master)](https://coveralls.io/github/ingogriebsch/sample-spring-cloud-contract-simple-cdc?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e3174f6eae734a71a66e0afaf5974430)](https://www.codacy.com/app/ingo.griebsch/sample-spring-cloud-contract-simple-cdc?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-cloud-contract-simple-cdc&utm_campaign=Badge_Grade)
 [![DepShield Badge](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-cloud-contract-simple-cdc/depshield.svg)](https://depshield.github.io)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
