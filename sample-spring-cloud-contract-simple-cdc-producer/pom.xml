@@ -32,6 +32,11 @@
             <artifactId>guava</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>spring-mock-mvc</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
@@ -58,9 +63,42 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-contract-verifier</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin><!-- https://www.eclipse.org/m2e/ -->
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                 <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.springframework.cloud</groupId>
+                                        <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                                        <versionRange>[1.0,)</versionRange>
+                                        <goals>
+                                            <goal>convert</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute />
+                                    </action>
+                                 </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin><!-- https://coderplus.github.io/copy-rename-maven-plugin -->
                 <groupId>com.coderplus.maven.plugins</groupId>
@@ -78,6 +116,20 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin><!-- https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/1.2.6.RELEASE/single/spring-cloud-contract.html -->
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                <version>${project.dependency.spring-cloud-contract.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <baseClassMappings>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*welcome.*</contractPackageRegex>
+                            <baseClassFQN>com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.rest.WelcomeBase</baseClassFQN>                        
+                        </baseClassMapping>
+                    </baseClassMappings>
+                </configuration>
             </plugin>
             <plugin><!-- https://docs.spring.io/spring-boot/docs/1.15.10.RELEASE/maven-plugin -->
                 <groupId>org.springframework.boot</groupId>
