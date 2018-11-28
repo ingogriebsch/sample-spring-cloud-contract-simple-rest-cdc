@@ -68,6 +68,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.dependency.spring-cloud-contract.version>1.2.6.RELEASE</project.dependency.spring-cloud-contract.version>
     </properties>
 
     <dependencyManagement>
@@ -82,7 +83,14 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>3.4</version>
 			</dependency>
-		</dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-dependencies</artifactId>
+                <version>${project.dependency.spring-cloud-contract.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
