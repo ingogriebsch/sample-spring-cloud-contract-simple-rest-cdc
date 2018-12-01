@@ -1,5 +1,7 @@
 package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.rest;
 
+import static io.restassured.module.mockmvc.RestAssuredMockMvc.standaloneSetup;
+
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.Application;
 
-import io.restassured.module.mockmvc.RestAssuredMockMvc;
-
+@ContextConfiguration(classes = { Application.class })
 @RunWith(SpringRunner.class)
 @WebMvcTest(WelcomeController.class)
-@ContextConfiguration(classes = { Application.class })
 public abstract class WelcomeBase {
 
     @Autowired
@@ -21,7 +21,7 @@ public abstract class WelcomeBase {
 
     @Before
     public void before() {
-        RestAssuredMockMvc.standaloneSetup(welcomeController);
+        standaloneSetup(welcomeController);
     }
 
 }
