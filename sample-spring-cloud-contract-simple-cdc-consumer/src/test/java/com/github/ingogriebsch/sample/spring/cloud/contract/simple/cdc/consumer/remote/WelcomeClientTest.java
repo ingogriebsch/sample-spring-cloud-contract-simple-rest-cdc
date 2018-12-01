@@ -1,5 +1,6 @@
 package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote;
 
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
@@ -21,8 +22,14 @@ public class WelcomeClientTest {
     private WelcomeClient welcomeClient;
 
     @Test
-    public void welcome_should_return_bad_request_if_query_param_name_missing() {
+    public void welcome_should_return_bad_request_if_query_param_name_is_missing() {
         Optional<WelcomeMessage> optional = welcomeClient.welcome(null);
+        assertThat(optional.isPresent()).isFalse();
+    }
+
+    @Test
+    public void welcome_should_return_bad_request_if_query_param_name_is_empty() {
+        Optional<WelcomeMessage> optional = welcomeClient.welcome(EMPTY);
         assertThat(optional.isPresent()).isFalse();
     }
 
