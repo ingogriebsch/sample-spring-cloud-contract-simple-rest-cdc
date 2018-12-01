@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
-@AutoConfigureStubRunner(ids = { "com.github.ingogriebsch.samples:sample-spring-cloud-contract-simple-cdc-producer:8080" })
+@AutoConfigureStubRunner(ids = { "com.github.ingogriebsch.samples:sample-spring-cloud-contract-simple-rest-cdc-producer:8080" })
 public class WelcomeClientTest {
 
     @Autowired

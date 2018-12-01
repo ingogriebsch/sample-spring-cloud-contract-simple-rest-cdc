@@ -29,7 +29,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.ingogriebsch.samples</groupId>
-            <artifactId>sample-spring-cloud-contract-simple-cdc-producer</artifactId>
+            <artifactId>sample-spring-cloud-contract-simple-rest-cdc-producer</artifactId>
             <version>${project.version}</version>
             <classifier>stubs</classifier>
             <scope>test</scope>
