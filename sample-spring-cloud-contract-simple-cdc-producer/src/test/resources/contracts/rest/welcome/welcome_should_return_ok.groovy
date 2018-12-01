@@ -6,7 +6,7 @@ Contract.make {
         method("GET")
         urlPath("/api/welcome") {
             queryParameters {
-                parameter("name", value(consumer(regex("[a-z]{5}"))))
+                parameter("name", value(consumer(regex("[A-Za-z]{1,}"))))
             }
         }
         headers {
