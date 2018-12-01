@@ -12,7 +12,7 @@ import lombok.Value;
 public class WelcomeController {
 
     @GetMapping(path = "/api/welcome", produces = APPLICATION_JSON_UTF8_VALUE)
-    public WelcomeMessage message(@RequestParam String name) {
+    public WelcomeMessage welcome(@RequestParam String name) {
         return new WelcomeMessage("Welcome " + name + "!");
     }
 
