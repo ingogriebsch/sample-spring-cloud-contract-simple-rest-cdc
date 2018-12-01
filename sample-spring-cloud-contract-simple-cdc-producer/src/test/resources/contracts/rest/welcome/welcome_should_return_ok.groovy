@@ -1,24 +1,23 @@
 package contracts
+import org.springframework.cloud.contract.spec.Contract
 
-org.springframework.cloud.contract.spec.Contract.make {
+Contract.make {
     request {
-        method 'GET'
-        urlPath('/api/welcome') {
+        method("GET")
+        urlPath("/api/welcome") {
             queryParameters {
-                parameter 'name': value(consumer(regex('[a-z]{5}')))
+                parameter("name", value(consumer(regex("[a-z]{5}"))))
             }
         }
         headers {
-            accept('application/json')
+            accept(applicationJsonUtf8())
         }
     }
     response {
-        status 200
-        body([
-            message: "Welcome ${fromRequest().query('name')}!"
-        ])
+        status(200)
+        body(message: "Welcome ${fromRequest().query('name')}!")
         headers {
-            contentType('application/json')
+            contentType(applicationJsonUtf8())
         }
     }
 }

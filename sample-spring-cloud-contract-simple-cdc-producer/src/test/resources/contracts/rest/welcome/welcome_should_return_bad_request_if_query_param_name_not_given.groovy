@@ -1,15 +1,15 @@
 package contracts
+import org.springframework.cloud.contract.spec.Contract
 
-org.springframework.cloud.contract.spec.Contract.make {
+Contract.make {
     request {
-        method 'GET'
-        urlPath('/api/welcome') {
-        }
+        method("GET")
+        urlPath("/api/welcome")
         headers {
-            accept('application/json')
+            accept(applicationJsonUtf8())
         }
     }
     response {
-        status 400
+        status(400)
     }
 }
