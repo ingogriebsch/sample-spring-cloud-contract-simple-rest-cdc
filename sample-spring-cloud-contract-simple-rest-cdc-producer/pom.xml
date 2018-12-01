@@ -13,14 +13,14 @@
 
     <parent>
         <groupId>com.github.ingogriebsch.samples</groupId>
-        <artifactId>sample-spring-cloud-contract-simple-cdc</artifactId>
+        <artifactId>sample-spring-cloud-contract-simple-rest-cdc</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-     </parent>
+    </parent>
 
-    <artifactId>sample-spring-cloud-contract-simple-cdc-consumer</artifactId>
+    <artifactId>sample-spring-cloud-contract-simple-rest-cdc-producer</artifactId>
 
-    <name>Spring Cloud Contract simple CDC consumer sample</name>
-    <description>This sample shows you how to use Spring Cloud Contract to consume a contract</description>
+    <name>Spring Cloud Contract simple REST CDC producer sample</name>
+    <description>This sample shows you how to use Spring Cloud Contract to produce a CDC for a simple REST API</description>
 
     <properties>
         <parent.project.build.directory>../target</parent.project.build.directory>
@@ -28,15 +28,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.ingogriebsch.samples</groupId>
-            <artifactId>sample-spring-cloud-contract-simple-cdc-producer</artifactId>
-            <version>${project.version}</version>
-            <classifier>stubs</classifier>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>spring-mock-mvc</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -67,12 +65,40 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
+            <artifactId>spring-cloud-starter-contract-verifier</artifactId>
             <scope>test</scope>
         </dependency>
-     </dependencies>
+    </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin><!-- https://www.eclipse.org/m2e/ -->
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                 <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.springframework.cloud</groupId>
+                                        <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                                        <versionRange>[1.0,)</versionRange>
+                                        <goals>
+                                            <goal>convert</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute />
+                                    </action>
+                                 </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin><!-- https://coderplus.github.io/copy-rename-maven-plugin -->
                 <groupId>com.coderplus.maven.plugins</groupId>
@@ -90,6 +116,20 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin><!-- https://cloud.spring.io/spring-cloud-static/spring-cloud-contract/1.2.6.RELEASE/single/spring-cloud-contract.html -->
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+                <version>${project.dependency.spring-cloud-contract.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <baseClassMappings>
+                        <baseClassMapping>
+                            <contractPackageRegex>.*welcome.*</contractPackageRegex>
+                            <baseClassFQN>com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.rest.WelcomeBase</baseClassFQN>                        
+                        </baseClassMapping>
+                    </baseClassMappings>
+                </configuration>
             </plugin>
             <plugin><!-- https://docs.spring.io/spring-boot/docs/1.15.10.RELEASE/maven-plugin -->
                 <groupId>org.springframework.boot</groupId>

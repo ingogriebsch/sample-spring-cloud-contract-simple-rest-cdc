@@ -20,13 +20,13 @@
     </parent>
 
     <groupId>com.github.ingogriebsch.samples</groupId>
-    <artifactId>sample-spring-cloud-contract-simple-cdc</artifactId>
+    <artifactId>sample-spring-cloud-contract-simple-rest-cdc</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Spring Cloud Contract simple CDC sample</name>
-    <description>This sample shows you how to use Spring Cloud Contract to produce and consume a simple CDC</description>
-    <url>https://github.com/ingogriebsch/sample-spring-cloud-contract-simple-cdc</url>
+    <name>Spring Cloud Contract simple REST CDC sample</name>
+    <description>This sample shows you how to use Spring Cloud Contract to produce and consume a CDC for a simple REST API</description>
+    <url>https://github.com/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc</url>
     <inceptionYear>2018</inceptionYear>
     <organization />
     <licenses>
@@ -49,10 +49,10 @@
 
     <modules>
     	<module>
-    		sample-spring-cloud-contract-simple-cdc-producer
+    		sample-spring-cloud-contract-simple-rest-cdc-producer
     	</module>
     	<module>
-    		sample-spring-cloud-contract-simple-cdc-consumer
+    		sample-spring-cloud-contract-simple-rest-cdc-consumer
     	</module>
     </modules>
 
