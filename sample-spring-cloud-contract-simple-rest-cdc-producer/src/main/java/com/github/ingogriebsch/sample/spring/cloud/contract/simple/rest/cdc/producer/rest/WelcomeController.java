@@ -1,4 +1,4 @@
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.rest;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.rest;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;

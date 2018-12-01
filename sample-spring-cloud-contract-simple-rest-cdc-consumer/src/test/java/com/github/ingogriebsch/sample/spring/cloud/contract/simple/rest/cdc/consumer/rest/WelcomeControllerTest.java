@@ -1,6 +1,6 @@
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.rest;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest;
 
-import static com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.rest.WelcomeController.PATH_WELCOME;
+import static com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest.WelcomeController.PATH_WELCOME;
 import static java.util.Optional.empty;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
@@ -21,8 +21,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultActions;
 
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote.WelcomeClient;
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote.WelcomeMessage;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.WelcomeClient;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.WelcomeMessage;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest.WelcomeController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(WelcomeController.class)

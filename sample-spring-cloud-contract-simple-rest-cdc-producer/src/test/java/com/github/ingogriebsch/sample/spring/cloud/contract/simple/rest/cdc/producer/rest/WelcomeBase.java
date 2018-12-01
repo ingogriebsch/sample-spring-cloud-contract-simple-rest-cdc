@@ -1,4 +1,4 @@
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.rest;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.rest;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.standaloneSetup;
 
@@ -9,7 +9,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.Application;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.Application;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.rest.WelcomeController;
 
 @ContextConfiguration(classes = { Application.class })
 @RunWith(SpringRunner.class)

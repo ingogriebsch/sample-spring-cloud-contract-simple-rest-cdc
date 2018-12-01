@@ -1,4 +1,4 @@
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,6 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.WelcomeClient;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.WelcomeMessage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)

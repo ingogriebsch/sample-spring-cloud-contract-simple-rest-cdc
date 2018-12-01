@@ -1,4 +1,4 @@
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.rest;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.http.ResponseEntity.notFound;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote.WelcomeClient;
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote.WelcomeMessage;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.WelcomeClient;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.WelcomeMessage;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

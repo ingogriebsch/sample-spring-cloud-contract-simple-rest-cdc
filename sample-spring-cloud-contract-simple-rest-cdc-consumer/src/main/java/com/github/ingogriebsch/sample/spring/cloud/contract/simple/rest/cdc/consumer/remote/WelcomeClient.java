@@ -1,4 +1,4 @@
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer.remote;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.of;

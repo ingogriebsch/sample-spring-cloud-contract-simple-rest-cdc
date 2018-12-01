@@ -7,7 +7,7 @@
  * BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and limitations under the License.
  */
-package com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.consumer;
+package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer;
 
 import static org.springframework.boot.SpringApplication.run;
 

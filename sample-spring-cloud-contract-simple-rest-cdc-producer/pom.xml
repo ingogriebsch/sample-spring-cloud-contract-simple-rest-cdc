@@ -126,7 +126,7 @@
                     <baseClassMappings>
                         <baseClassMapping>
                             <contractPackageRegex>.*welcome.*</contractPackageRegex>
-                            <baseClassFQN>com.github.ingogriebsch.sample.spring.cloud.contract.simple.cdc.producer.rest.WelcomeBase</baseClassFQN>                        
+                            <baseClassFQN>com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.rest.WelcomeBase</baseClassFQN>                        
                         </baseClassMapping>
                     </baseClassMappings>
                 </configuration>
