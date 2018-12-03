@@ -2,7 +2,6 @@
 [![Build Status](https://travis-ci.org/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc.svg?branch=master)](https://travis-ci.org/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc)
 [![Coverage Status](https://coveralls.io/repos/github/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc/badge.svg?branch=master)](https://coveralls.io/github/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/041994e8fac04ab0934356e0b48a1234)](https://www.codacy.com/app/ingo.griebsch/sample-spring-cloud-contract-simple-rest-cdc?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc&utm_campaign=Badge_Grade)
-[![DepShield Badge](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-cloud-contract-simple-cdc/depshield.svg)](https://depshield.github.io)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This sample shows you how to use Spring Cloud Contract to produce and consume a CDC for a simple REST API.
