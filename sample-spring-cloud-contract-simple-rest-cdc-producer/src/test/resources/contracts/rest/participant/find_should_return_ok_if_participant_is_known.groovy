@@ -4,7 +4,7 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
     request {
         method("GET")
-        urlPath("/api/participant") {
+        urlPath("/api/participants") {
             queryParameters {
                 parameter("name", value(consumer(regex("[A-Za-z]{1,}"))))
             }

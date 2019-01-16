@@ -27,14 +27,14 @@ import lombok.RequiredArgsConstructor;
 @Validated
 public class ParticipantController {
 
-    static final String PATH_PARTICIPANT = "/api/participant";
+    static final String PATH_PARTICIPANT = "/api/participants";
 
     @NonNull
     private final ParticipantClient participantClient;
 
-    @GetMapping(path = "/api/participant", produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Participant> participant(@Size(min = 1) @RequestParam String name) {
-        Participant p = participantClient.participant(name);
+    @GetMapping(path = PATH_PARTICIPANT, produces = APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Participant> find(@Size(min = 1) @RequestParam String name) {
+        Participant p = participantClient.find(name);
         return p != null ? ok(p) : notFound().build();
     }
 

@@ -38,25 +38,25 @@ public class ParticipantClientTest {
     private ParticipantClient participantClient;
 
     @Test
-    public void participant_should_throw_exception_containing_http_status_400_if_param_name_is_missing() {
+    public void find_should_throw_exception_containing_http_status_400_if_param_name_is_missing() {
         Matcher<HttpStatusCodeException> matchers =
             allOf(instanceOf(HttpClientErrorException.class), HttpStatusCodeMatcher.hasHttpStatus(BAD_REQUEST));
         expectedException.expect(matchers);
-        participantClient.participant(null);
+        participantClient.find(null);
     }
 
     @Test
-    public void participant_should_throw_exception_containing_http_status_400_if_param_name_is_empty() {
+    public void find_should_throw_exception_containing_http_status_400_if_param_name_is_empty() {
         Matcher<HttpStatusCodeException> matchers =
             allOf(instanceOf(HttpClientErrorException.class), HttpStatusCodeMatcher.hasHttpStatus(BAD_REQUEST));
         expectedException.expect(matchers);
-        participantClient.participant(EMPTY);
+        participantClient.find(EMPTY);
     }
 
     @Test
-    public void participant_should_return_ok_if_participant_is_known() {
+    public void find_should_return_ok_if_participant_is_known() {
         String name = "Peter";
-        Participant participant = participantClient.participant(name);
+        Participant participant = participantClient.find(name);
         assertThat(participant).isNotNull();
         assertThat(participant.getName()).isNotNull().isEqualTo(name);
     }

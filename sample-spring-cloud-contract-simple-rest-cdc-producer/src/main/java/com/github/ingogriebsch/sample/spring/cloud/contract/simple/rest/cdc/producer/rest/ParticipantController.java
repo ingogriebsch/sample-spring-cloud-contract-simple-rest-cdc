@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.NonNull;
 import lombok.Value;
 
 @RestController
 @Validated
 public class ParticipantController {
 
-    @GetMapping(path = "/api/participant", produces = APPLICATION_JSON_UTF8_VALUE)
-    public Participant participant(@Size(min = 1) @RequestParam String name) {
+    @GetMapping(path = "/api/participants", produces = APPLICATION_JSON_UTF8_VALUE)
+    public Participant find(@Size(min = 1) @RequestParam String name) {
         return new Participant(name);
     }
 
@@ -32,6 +33,8 @@ public class ParticipantController {
     @Value
     private static class Participant {
 
+        @NonNull
         private String name;
     }
+
 }

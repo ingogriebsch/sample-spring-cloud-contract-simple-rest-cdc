@@ -33,8 +33,8 @@ public class ParticipantControllerTest {
     private ParticipantClient participantClient;
 
     @Test
-    public void participant_should_return_bad_request_if_query_param_name_is_missing() throws Exception {
-        given(participantClient.participant(any())).willReturn(null);
+    public void find_should_return_bad_request_if_query_param_name_is_missing() throws Exception {
+        given(participantClient.find(any())).willReturn(null);
 
         RequestBuilder builder = get(PATH_PARTICIPANT).accept(APPLICATION_JSON_UTF8);
         ResultActions result = mockMvc.perform(builder);
@@ -44,9 +44,9 @@ public class ParticipantControllerTest {
     }
 
     @Test
-    public void participant_should_return_not_found_if_participant_is_not_known() throws Exception {
+    public void find_should_return_not_found_if_participant_is_not_known() throws Exception {
         String name = "Unknown";
-        given(participantClient.participant(name)).willReturn(null);
+        given(participantClient.find(name)).willReturn(null);
 
         RequestBuilder builder = get(PATH_PARTICIPANT + "?name={name}", name).accept(APPLICATION_JSON_UTF8);
         ResultActions result = mockMvc.perform(builder);
@@ -56,9 +56,9 @@ public class ParticipantControllerTest {
     }
 
     @Test
-    public void participant_should_return_ok_if_participant_is_known() throws Exception {
+    public void find_should_return_ok_if_participant_is_known() throws Exception {
         String name = "Peter";
-        given(participantClient.participant(name)).willReturn(new Participant(name));
+        given(participantClient.find(name)).willReturn(new Participant(name));
 
         RequestBuilder builder = get(PATH_PARTICIPANT + "?name={name}", name).accept(APPLICATION_JSON_UTF8);
         ResultActions result = mockMvc.perform(builder);

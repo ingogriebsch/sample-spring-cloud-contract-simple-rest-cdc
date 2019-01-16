@@ -24,8 +24,8 @@ public class ParticipantClient {
     @NonNull
     private final RestTemplate restTemplate;
 
-    public Participant participant(String name) {
-        String url = remoteHost + "/api/participant?name={name}";
+    public Participant find(String name) {
+        String url = remoteHost + "/api/participants?name={name}";
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(ACCEPT, APPLICATION_JSON_UTF8_VALUE);
 
