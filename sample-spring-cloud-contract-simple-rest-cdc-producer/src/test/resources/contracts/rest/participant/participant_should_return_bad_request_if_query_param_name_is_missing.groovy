@@ -4,11 +4,7 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
     request {
         method("GET")
-        urlPath("/api/welcome") {
-            queryParameters {
-                parameter("name", "")
-            }
-        }
+        urlPath("/api/participant")
         headers {
             accept(applicationJsonUtf8())
         }

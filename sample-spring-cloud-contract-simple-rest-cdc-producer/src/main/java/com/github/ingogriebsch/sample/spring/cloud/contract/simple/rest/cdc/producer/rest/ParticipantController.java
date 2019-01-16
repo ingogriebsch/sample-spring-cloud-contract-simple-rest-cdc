@@ -17,11 +17,11 @@ import lombok.Value;
 
 @RestController
 @Validated
-public class WelcomeController {
+public class ParticipantController {
 
-    @GetMapping(path = "/api/welcome", produces = APPLICATION_JSON_UTF8_VALUE)
-    public WelcomeMessage welcome(@Size(min = 1) @RequestParam String name) {
-        return new WelcomeMessage("Welcome " + name + "!");
+    @GetMapping(path = "/api/participant", produces = APPLICATION_JSON_UTF8_VALUE)
+    public Participant participant(@Size(min = 1) @RequestParam String name) {
+        return new Participant(name);
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
@@ -30,8 +30,8 @@ public class WelcomeController {
     }
 
     @Value
-    private static class WelcomeMessage {
+    private static class Participant {
 
-        private String message;
+        private String name;
     }
 }

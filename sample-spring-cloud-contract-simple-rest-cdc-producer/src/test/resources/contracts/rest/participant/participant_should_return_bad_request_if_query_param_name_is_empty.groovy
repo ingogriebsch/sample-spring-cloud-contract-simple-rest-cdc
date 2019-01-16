@@ -4,9 +4,9 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
     request {
         method("GET")
-        urlPath("/api/welcome") {
+        urlPath("/api/participant") {
             queryParameters {
-                parameter("name", value(consumer(regex("[A-Za-z]{1,}"))))
+                parameter("name", "")
             }
         }
         headers {
@@ -14,10 +14,6 @@ Contract.make {
         }
     }
     response {
-        status(200)
-        body(message: "Welcome ${fromRequest().query('name')}!")
-        headers {
-            contentType(applicationJsonUtf8())
-        }
+        status(400)
     }
 }

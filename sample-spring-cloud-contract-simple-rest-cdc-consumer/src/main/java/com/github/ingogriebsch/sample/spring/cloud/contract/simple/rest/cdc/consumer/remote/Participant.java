@@ -3,8 +3,8 @@ package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.con
 import lombok.Value;
 
 @Value
-public class WelcomeMessage {
+public class Participant {
 
-    private String message;
+    private String name;
 
 }

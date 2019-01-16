@@ -10,19 +10,18 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.Application;
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.rest.WelcomeController;
 
 @ContextConfiguration(classes = { Application.class })
 @RunWith(SpringRunner.class)
-@WebMvcTest(WelcomeController.class)
-public abstract class WelcomeBase {
+@WebMvcTest(ParticipantController.class)
+public abstract class ParticipantBase {
 
     @Autowired
-    private WelcomeController welcomeController;
+    private ParticipantController participantController;
 
     @Before
     public void before() {
-        standaloneSetup(welcomeController);
+        standaloneSetup(participantController);
     }
 
 }
