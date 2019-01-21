@@ -43,7 +43,7 @@ public abstract class ParticipantBase {
                 return of(new Participant((String) invocation.getArguments()[0]));
             }
         });
-        given(participantService.find("_unknown_")).willReturn(empty());
+        given(participantService.find("__not_known__")).willReturn(empty());
 
         given(participantService.insert(any())).will(new Answer<Participant>() {
 
