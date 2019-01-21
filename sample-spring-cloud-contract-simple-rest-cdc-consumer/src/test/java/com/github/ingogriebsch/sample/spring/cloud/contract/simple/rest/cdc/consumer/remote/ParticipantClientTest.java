@@ -60,7 +60,7 @@ public class ParticipantClientTest {
 
     @Test
     public void find_should_return_not_found_if_participant_is_not_known() {
-        Optional<Participant> optional = participantClient.find("__unknown__");
+        Optional<Participant> optional = participantClient.find("_unknown_");
         assertThat(optional).isNotNull();
         assertThat(optional.isPresent()).isFalse();
     }
