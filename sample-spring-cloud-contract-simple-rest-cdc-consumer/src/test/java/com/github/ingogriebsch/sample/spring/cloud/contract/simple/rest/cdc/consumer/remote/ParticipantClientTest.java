@@ -67,7 +67,7 @@ public class ParticipantClientTest {
 
     @Test
     public void find_should_return_ok_if_participant_is_known() {
-        String name = randomAlphabetic(5);
+        String name = "__known__";
         Optional<Participant> optional = participantClient.find(name);
         assertThat(optional).isNotNull();
         assertThat(optional.isPresent()).isTrue();
