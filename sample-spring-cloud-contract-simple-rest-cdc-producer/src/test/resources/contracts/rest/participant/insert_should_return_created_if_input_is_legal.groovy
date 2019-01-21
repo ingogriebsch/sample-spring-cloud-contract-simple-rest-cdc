@@ -3,20 +3,21 @@ import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
     request {
-        method("GET")
+        method("POST")
         urlPath("/api/participants") {
-            queryParameters {[
-                parameter("name", value(regex("[A-Za-z]{1,}")))
-            ]}
+            body([
+                name: value(regex("[A-Za-z]{1,}"))
+            ])
         }
         headers {[
-            accept(applicationJsonUtf8())
+            accept(applicationJsonUtf8()),
+            contentType(applicationJsonUtf8())
         ]}
     }
     response {
-        status(200)
+        status(201)
         body([
-            name: "${fromRequest().query('name')}"
+            name: "${fromRequest().body('$.name')}"
         ])
         headers {[
             contentType(applicationJsonUtf8())

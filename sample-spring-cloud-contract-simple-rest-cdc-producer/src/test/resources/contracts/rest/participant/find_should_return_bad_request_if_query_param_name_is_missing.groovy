@@ -5,9 +5,9 @@ Contract.make {
     request {
         method("GET")
         urlPath("/api/participants")
-        headers {
+        headers {[
             accept(applicationJsonUtf8())
-        }
+        ]}
     }
     response {
         status(400)

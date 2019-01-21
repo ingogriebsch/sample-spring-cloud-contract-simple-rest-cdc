@@ -6,7 +6,7 @@ Contract.make {
         method("GET")
         urlPath("/api/participants") {
             queryParameters {[
-                parameter("name", value(regex("[A-Za-z]{1,}")))
+                parameter("name", value("__unknown__"))
             ]}
         }
         headers {[
@@ -14,12 +14,6 @@ Contract.make {
         ]}
     }
     response {
-        status(200)
-        body([
-            name: "${fromRequest().query('name')}"
-        ])
-        headers {[
-            contentType(applicationJsonUtf8())
-        ]}
+        status(404)
     }
 }
