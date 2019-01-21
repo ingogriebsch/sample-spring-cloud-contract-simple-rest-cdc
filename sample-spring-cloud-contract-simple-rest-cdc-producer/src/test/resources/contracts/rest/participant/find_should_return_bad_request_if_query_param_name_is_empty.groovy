@@ -6,7 +6,7 @@ Contract.make {
         method("GET")
         urlPath("/api/participants") {
             queryParameters {[
-                parameter("name", "")
+                parameter("name", value(""))
             ]}
         }
         headers {[

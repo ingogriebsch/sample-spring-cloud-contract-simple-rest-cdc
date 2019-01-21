@@ -41,7 +41,7 @@ public class ParticipantClientTest {
     private ParticipantClient participantClient;
 
     @Test
-    public void find_should_return_bad_request_if_query_param_name_is_missing() {
+    public void find_should_return_bad_request_if_query_param_name_is_absent() {
         Matcher<HttpStatusCodeException> matchers =
             allOf(instanceOf(HttpClientErrorException.class), HttpStatusCodeMatcher.hasHttpStatus(BAD_REQUEST));
         expectedException.expect(matchers);
