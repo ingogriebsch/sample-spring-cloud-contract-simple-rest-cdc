@@ -1,10 +1,13 @@
 package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote;
 
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
+
+import java.util.Optional;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
@@ -38,27 +41,66 @@ public class ParticipantClientTest {
     private ParticipantClient participantClient;
 
     @Test
-    public void find_should_throw_exception_containing_http_status_400_if_param_name_is_missing() {
+    public void find_should_return_bad_request_if_query_param_name_is_missing() {
         Matcher<HttpStatusCodeException> matchers =
             allOf(instanceOf(HttpClientErrorException.class), HttpStatusCodeMatcher.hasHttpStatus(BAD_REQUEST));
         expectedException.expect(matchers);
+
         participantClient.find(null);
     }
 
     @Test
-    public void find_should_throw_exception_containing_http_status_400_if_param_name_is_empty() {
+    public void find_should_return_bad_request_if_query_param_name_is_empty() {
         Matcher<HttpStatusCodeException> matchers =
             allOf(instanceOf(HttpClientErrorException.class), HttpStatusCodeMatcher.hasHttpStatus(BAD_REQUEST));
         expectedException.expect(matchers);
+
         participantClient.find(EMPTY);
     }
 
     @Test
+    public void find_should_return_not_found_if_participant_is_not_known() {
+        Optional<Participant> optional = participantClient.find("__unknown__");
+        assertThat(optional).isNotNull();
+        assertThat(optional.isPresent()).isFalse();
+    }
+
+    @Test
     public void find_should_return_ok_if_participant_is_known() {
-        String name = "Peter";
-        Participant participant = participantClient.find(name);
-        assertThat(participant).isNotNull();
-        assertThat(participant.getName()).isNotNull().isEqualTo(name);
+        String name = randomAlphabetic(5);
+        Optional<Participant> optional = participantClient.find(name);
+        assertThat(optional).isNotNull();
+        assertThat(optional.isPresent()).isTrue();
+        assertThat(optional.get()).isNotNull().hasFieldOrPropertyWithValue("name", name);
+    }
+
+    @Test
+    public void insert_should_throw_exception_if_input_is_null() {
+        expectedException.expect(NullPointerException.class);
+        participantClient.insert(null);
+    }
+
+    @Test
+    public void insert_should_return_bad_request_if_input_name_is_empty() {
+        Matcher<HttpStatusCodeException> matchers =
+            allOf(instanceOf(HttpClientErrorException.class), HttpStatusCodeMatcher.hasHttpStatus(BAD_REQUEST));
+        expectedException.expect(matchers);
+
+        participantClient.insert(new ParticipantInput(EMPTY));
+    }
+
+    @Test
+    public void insert_should_return_conflict_if_participant_is_already_known() {
+        ParticipantInput input = new ParticipantInput("__already_known__");
+        Participant participant = participantClient.insert(input);
+        assertThat(participant).isNull();
+    }
+
+    @Test
+    public void insert_should_return_created_if_input_is_legal() {
+        ParticipantInput input = new ParticipantInput(randomAlphabetic(5));
+        Participant participant = participantClient.insert(input);
+        assertThat(participant).isNotNull().isEqualToComparingFieldByField(input);
     }
 
     @RequiredArgsConstructor
