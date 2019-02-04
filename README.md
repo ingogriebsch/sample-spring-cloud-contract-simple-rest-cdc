@@ -1,5 +1,6 @@
 # Spring Cloud Contract simple CDC sample
 [![Build Status](https://travis-ci.org/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc.svg?branch=master)](https://travis-ci.org/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc)
+[![Codecov Status](https://codecov.io/gh/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc/branch/master/graph/badge.svg)](https://codecov.io/gh/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc)
 [![Coveralls Status](https://coveralls.io/repos/github/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc/badge.svg?branch=master)](https://coveralls.io/github/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc?branch=master)
 [![Codacy Status](https://api.codacy.com/project/badge/Grade/041994e8fac04ab0934356e0b48a1234)](https://www.codacy.com/app/ingo.griebsch/sample-spring-cloud-contract-simple-rest-cdc?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc&utm_campaign=Badge_Grade)
 [![DepShield Status](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-cloud-contract-simple-rest-cdc/depshield.svg)](https://depshield.github.io)
