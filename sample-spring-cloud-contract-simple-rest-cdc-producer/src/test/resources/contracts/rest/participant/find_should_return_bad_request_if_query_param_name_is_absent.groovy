@@ -7,7 +7,8 @@
  * BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and limitations under the License.
  */
-package contracts
+package contracts.rest.participant
+
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
@@ -22,7 +23,7 @@ Contract.make {
             accept(applicationJsonUtf8())
         ]}
     }
-    response {
-        status(400)
+    response { 
+        status(400) 
     }
 }
