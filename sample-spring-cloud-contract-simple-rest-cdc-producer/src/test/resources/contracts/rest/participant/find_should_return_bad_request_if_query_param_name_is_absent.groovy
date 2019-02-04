@@ -9,9 +9,9 @@
  */
 package contracts.rest.participant
 
-import org.springframework.cloud.contract.spec.Contract
+import static org.springframework.cloud.contract.spec.Contract.make
 
-Contract.make {
+make {
     request {
         method("GET")
         urlPath("/api/participants") {

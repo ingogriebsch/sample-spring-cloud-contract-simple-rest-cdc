@@ -9,28 +9,28 @@
  */
 package contracts.rest.participant
 
-import org.springframework.cloud.contract.spec.Contract
+import static org.springframework.cloud.contract.spec.Contract.make
 
-Contract.make {
+make {
     request {
         method("POST")
         urlPath("/api/participants") {
-            body([
-                name: value(regex("[A-Za-z]{1,}"))
-            ])
+            body(
+                name: $(regex("[A-Za-z]{1,}"))
+            )
         }
-        headers {[
-            accept(applicationJsonUtf8()),
+        headers {
+            accept(applicationJsonUtf8())
             contentType(applicationJsonUtf8())
-        ]}
+        }
     }
     response {
         status(201)
-        body([
-            name: "${fromRequest().body('$.name')}"
-        ])
-        headers {[
+        body(
+            name: fromRequest().body('$.name')
+        )
+        headers {
             contentType(applicationJsonUtf8())
-        ]}
+        }
     }
 }

@@ -9,20 +9,20 @@
  */
 package contracts.rest.participant
 
-import org.springframework.cloud.contract.spec.Contract
+import static org.springframework.cloud.contract.spec.Contract.make
 
-Contract.make {
+make {
     request {
         method("POST")
         urlPath("/api/participants") {
-            body([
+            body(
                 name: value("__already_known__")
-            ])
+            )
         }
-        headers {[
-            accept(applicationJsonUtf8()),
+        headers {
+            accept(applicationJsonUtf8())
             contentType(applicationJsonUtf8())
-        ]}
+        }
     }
     response {
         status(409)
