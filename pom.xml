@@ -15,7 +15,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.10.RELEASE</version>
-        <relativePath/>
+        <relativePath />
         <!-- lookup parent from repository -->
     </parent>
 
@@ -48,21 +48,17 @@
     </developers>
 
     <modules>
-    	<module>
-    		sample-spring-cloud-contract-simple-rest-cdc-producer
-    	</module>
-    	<module>
-    		sample-spring-cloud-contract-simple-rest-cdc-consumer
-    	</module>
+        <module>sample-spring-cloud-contract-simple-rest-cdc-producer</module>
+        <module>sample-spring-cloud-contract-simple-rest-cdc-consumer</module>
     </modules>
 
     <scm>
         <url>${project.url}</url>
     </scm>
     <issueManagement>
-	    <url>${project.url}/issues</url>
-	    <system>GitHub</system>
-	</issueManagement>
+        <url>${project.url}/issues</url>
+        <system>GitHub</system>
+    </issueManagement>
 
     <properties>
         <java.version>1.8</java.version>
@@ -72,17 +68,17 @@
     </properties>
 
     <dependencyManagement>
-	    <dependencies>
+        <dependencies>
             <dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>21.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.4</version>
-			</dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>21.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.4</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-dependencies</artifactId>
@@ -96,24 +92,24 @@
     <build>
         <pluginManagement>
             <plugins>
-	            <plugin><!-- https://docs.spring.io/spring-boot/docs/1.15.10.RELEASE/maven-plugin -->
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-maven-plugin</artifactId>
-					<executions>
-	                    <execution>
-	                        <goals>
-	                            <goal>build-info</goal>
-	                        </goals>
-	                        <configuration>
-	                            <additionalProperties>
-	                                <source.encoding>${project.build.sourceEncoding}</source.encoding>
-	                                <java.source>${maven.compiler.source}</java.source>
-	                                <java.target>${maven.compiler.target}</java.target>
-	                            </additionalProperties>
-	                        </configuration>
-	                    </execution>
-	                </executions>
-	            </plugin>
+                <plugin><!-- https://docs.spring.io/spring-boot/docs/1.15.10.RELEASE/maven-plugin -->
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                            <configuration>
+                                <additionalProperties>
+                                    <source.encoding>${project.build.sourceEncoding}</source.encoding>
+                                    <java.source>${maven.compiler.source}</java.source>
+                                    <java.target>${maven.compiler.target}</java.target>
+                                </additionalProperties>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
