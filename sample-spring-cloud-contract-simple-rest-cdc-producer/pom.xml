@@ -165,7 +165,7 @@
                                             <pluginExecutionFilter>
                                                 <groupId>org.springframework.cloud</groupId>
                                                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-                                                <versionRange>[1.0,)</versionRange>
+                                                <versionRange>[${project.dependency.spring-cloud-contract.version},)</versionRange>
                                                 <goals>
                                                     <goal>convert</goal>
                                                     <goal>generateTests</goal>
