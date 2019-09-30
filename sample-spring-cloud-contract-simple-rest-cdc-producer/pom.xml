@@ -168,6 +168,7 @@
                                                 <versionRange>[${project.dependency.spring-cloud-contract.version},)</versionRange>
                                                 <goals>
                                                     <goal>convert</goal>
+                                                    <goal>generateStubs</goal>
                                                     <goal>generateTests</goal>
                                                 </goals>
                                             </pluginExecutionFilter>
