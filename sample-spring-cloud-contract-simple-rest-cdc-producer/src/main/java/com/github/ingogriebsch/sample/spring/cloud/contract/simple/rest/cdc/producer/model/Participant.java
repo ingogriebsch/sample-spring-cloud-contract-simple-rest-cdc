@@ -9,10 +9,9 @@
  */
 package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.model;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import lombok.NonNull;
 import lombok.Value;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Value
 public class Participant {

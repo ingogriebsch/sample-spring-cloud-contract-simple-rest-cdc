@@ -14,9 +14,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
 
-import org.junit.Test;
-
 import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.model.Participant;
+import org.junit.Test;
 
 public class ParticipantServiceTest {
 

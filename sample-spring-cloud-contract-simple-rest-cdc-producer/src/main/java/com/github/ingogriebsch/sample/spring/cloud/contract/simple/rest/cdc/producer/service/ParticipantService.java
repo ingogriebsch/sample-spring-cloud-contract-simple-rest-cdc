@@ -13,11 +13,9 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import org.springframework.stereotype.Component;
-
 import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.model.Participant;
-
 import lombok.NonNull;
+import org.springframework.stereotype.Component;
 
 @Component
 public class ParticipantService {

@@ -23,6 +23,12 @@ import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.model.Participant;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.service.ParticipantService;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -33,14 +39,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.model.Participant;
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.producer.service.ParticipantService;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
