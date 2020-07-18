@@ -9,9 +9,10 @@
  */
 package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest;
 
-import static com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest.ParticipantController.PATH_PARTICIPANTS;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
+
+import static com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.rest.ParticipantController.PATH_PARTICIPANTS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.any;
@@ -21,6 +22,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.Participant;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.ParticipantClient;
+import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.ParticipantInput;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +34,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultActions;
-
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.Participant;
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.ParticipantClient;
-import com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.consumer.remote.ParticipantInput;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ParticipantController.class)

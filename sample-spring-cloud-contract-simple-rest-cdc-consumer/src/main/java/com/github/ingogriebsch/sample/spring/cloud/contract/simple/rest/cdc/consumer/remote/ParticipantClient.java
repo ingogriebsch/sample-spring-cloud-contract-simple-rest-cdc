@@ -11,6 +11,7 @@ package com.github.ingogriebsch.sample.spring.cloud.contract.simple.rest.cdc.con
 
 import static java.util.Optional.empty;
 import static java.util.Optional.ofNullable;
+
 import static org.springframework.http.HttpHeaders.ACCEPT;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.HttpMethod.GET;
@@ -21,6 +22,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
 import java.util.Optional;
 
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -28,9 +31,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
-
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor

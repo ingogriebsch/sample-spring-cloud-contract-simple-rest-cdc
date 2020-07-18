@@ -18,6 +18,8 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 import java.util.Optional;
 
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
@@ -34,9 +36,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpStatusCodeException;
-
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.NONE)
