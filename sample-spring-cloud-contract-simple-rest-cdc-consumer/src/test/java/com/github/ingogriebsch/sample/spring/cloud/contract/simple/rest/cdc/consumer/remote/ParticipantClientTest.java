@@ -125,7 +125,7 @@ public class ParticipantClientTest {
         @Override
         public boolean matches(Object item) {
             return item != null && HttpStatusCodeException.class.isAssignableFrom(item.getClass())
-                && httpStatus.equals(((HttpStatusCodeException) item).getStatusCode());
+                    && httpStatus.equals(((HttpStatusCodeException) item).getStatusCode());
         }
 
         @Factory
